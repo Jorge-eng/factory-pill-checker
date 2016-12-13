@@ -17,5 +17,5 @@ GOOS=windows GOARCH=386 go build -o bin/${FILE_NAME} -ldflags="-X main.Commit=${
 GOOS=darwin GOARCH=amd64 go build -o bin/jabil-pill-checker-${TAG} -ldflags="-X main.Commit=${GIT_SHA} -X main.Tag=${TAG}"
 
 aws s3 cp bin/${FILE_NAME} s3://hello-jabil/pill-checker/
-echo "Uploaded: s3://hello-jabil/pill-checker/bin/${FILE_NAME}"
+echo "Uploaded: s3://hello-jabil/pill-checker/${FILE_NAME}"
 echo "The file ${FILE_NAME} is not public. Upload to Arena for ECO."
